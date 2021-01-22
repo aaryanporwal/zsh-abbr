@@ -242,6 +242,60 @@ dependencies="erase"
 run '(( ! ${+ABBR_REGULAR_USER_ABBREVIATIONS[test-function-multiline]} )) \
 	&& (( ! ${+ABBR_GLOBAL_USER_ABBREVIATIONS[gtest-function-multiline]} ))'
 
+test_name="Can add a multi-word abbreviation"
+dependencies=""
+skip
+
+test_name="Can add multiple multi-word abbreviations"
+dependencies=""
+skip
+
+test_name="Can add multi-word abbreviations which reuse abbreviations"
+dependencies=""
+skip
+# things are getting suffled :(
+#
+# abbr a=b && abbr
+# "a"="b"
+#
+# abbr "a c"=d && abbr
+# "a c"="d"
+# "a"="b"
+#
+# abbr c=e && abbr
+# "a c"="a"
+# "b"="d"
+# "c"="e"
+#
+# abbr x=y && abbr
+# "a c"="a"
+# "b"="c"
+# "d"="e"
+# "x"="y"
+
+test_name="Double-quoted single quotes in the abbreviation are preserved"
+dependencies=""
+skip # abbr "'a"=…
+
+test_name="Single-quoted double quotes in the abbreviation are preserved"
+dependencies=""
+skip # abbr '"a'=…
+
+test_name="Bare single quotes at the start of the abbreviation are swallowed"
+dependencies=""
+skip
+
+test_name="Bare single quotes in the middle of the abbreviation are swallowed"
+dependencies=""
+skip
+
+test_name="Bare double quotes at the start of the abbreviation are swallowed"
+dependencies=""
+skip
+
+test_name="Bare double quotes in the middle of the abbreviation are swallowed"
+dependencies=""
+skip
 
 ### ### ### All tests must be above this line ### ### ###
 
